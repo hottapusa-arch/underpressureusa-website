@@ -46,127 +46,23 @@ h1,h2,h3,p{margin-top:0} h1{font-family:Anton,Impact,sans-serif;text-transform:u
 @media(max-width:1000px){.cards.four{grid-template-columns:repeat(2,1fr)}.industry-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.partner-hero-content{margin-left:20px;padding-right:20px;padding-top:125px;padding-bottom:50px}.partner-hero-bg{background-position:58% center}.partner-hero-overlay{background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.86) 46%,rgba(0,0,0,.98))}.cards.four,.manifesto-grid,.industry-grid,.media-card{grid-template-columns:1fr}.partner-photo-block img{height:380px}.manifesto blockquote{padding:24px}.partner-card{min-height:auto}}
 
-/* =========================================================
-   PARTNER PAGE FINAL HERO LAYOUT - READABLE VERSION
-   ========================================================= */
-
-body.partner-page .partner-hero {
-  position: relative !important;
-  min-height: 100svh !important;
-  display: flex !important;
-  align-items: center !important;
-  overflow: hidden !important;
-  background: #000 !important;
-  padding: 150px 0 90px !important;
+/* ===== Partner Hero V2 ===== */
+body.partner-page .partner-title{
+  font-family:Anton,Impact,sans-serif;
+  text-transform:uppercase;
+  line-height:.86;
+  margin:0 0 24px;
 }
-
-body.partner-page .partner-hero-bg {
-  position: absolute !important;
-  inset: 0 !important;
-  background-image: url('assets/images/hero-valve-insert.jpg') !important;
-  background-size: cover !important;
-  background-position: 68% center !important;
-  filter: contrast(1.08) brightness(.58) !important;
-  transform: scale(1.04) !important;
-  z-index: 0 !important;
+body.partner-page .partner-title .small-line{
+  display:block;
+  font-size:clamp(2rem,3vw,2.8rem);
+  letter-spacing:.08em;
+  margin-bottom:.45rem;
 }
-
-body.partner-page .partner-hero-overlay {
-  position: absolute !important;
-  inset: 0 !important;
-  background:
-    radial-gradient(circle at 68% 50%, rgba(0,0,0,.05), rgba(0,0,0,.55) 44%, rgba(0,0,0,.95) 82%),
-    linear-gradient(90deg, rgba(0,0,0,.98) 0%, rgba(0,0,0,.78) 36%, rgba(0,0,0,.18) 68%, rgba(0,0,0,.76) 100%) !important;
-  z-index: 1 !important;
+body.partner-page .partner-title span:not(.small-line){
+  display:block;
+  font-size:clamp(5rem,9vw,8rem);
 }
-
-body.partner-page .partner-hero-content {
-  position: relative !important;
-  z-index: 2 !important;
-  width: min(980px, calc(100% - 40px)) !important;
-  margin-left: max(40px, calc((100vw - 1180px)/2)) !important;
-  margin-right: auto !important;
-  padding: 0 !important;
-  transform: none !important;
-}
-
-body.partner-page .partner-title {
-  font-family: Anton, Impact, sans-serif !important;
-  text-transform: uppercase !important;
-  font-size: clamp(4.3rem, 8.2vw, 8rem) !important;
-  line-height: .88 !important;
-  letter-spacing: .012em !important;
-  margin: 0 0 24px !important;
-  padding: 0 !important;
-  max-width: 1040px !important;
-  text-shadow: 0 20px 60px rgba(0,0,0,.65) !important;
-}
-
-body.partner-page .partner-title span {
-  display: block !important;
-}
-
-body.partner-page .partner-title .title-small {
-  font-size: .62em !important;
-  letter-spacing: .02em !important;
-  line-height: .9 !important;
-  margin-bottom: .05em !important;
-}
-
-body.partner-page .partner-hero h2 {
-  color: var(--blue) !important;
-  font-size: clamp(1.35rem, 3vw, 2.35rem) !important;
-  line-height: 1.08 !important;
-  max-width: 780px !important;
-  margin-bottom: 18px !important;
-  font-weight: 900 !important;
-  text-transform: uppercase !important;
-}
-
-body.partner-page .partner-hero p:not(.eyebrow) {
-  max-width: 760px !important;
-  color: #e4ebf2 !important;
-  font-size: 1.08rem !important;
-}
-
-body.partner-page .site-header {
-  z-index: 9999 !important;
-}
-
-@media (max-width: 900px) {
-  body.partner-page .partner-hero {
-    padding: 135px 0 70px !important;
-    align-items: center !important;
-  }
-
-  body.partner-page .partner-hero-content {
-    margin-left: 20px !important;
-    padding-right: 20px !important;
-  }
-
-  body.partner-page .partner-title {
-    font-size: clamp(3.4rem, 12vw, 6rem) !important;
-    max-width: 760px !important;
-  }
-}
-
-@media (max-width: 560px) {
-  body.partner-page .partner-hero {
-    min-height: 92svh !important;
-    padding: 120px 0 56px !important;
-  }
-
-  body.partner-page .partner-hero-bg {
-    background-position: 58% center !important;
-    opacity: .82 !important;
-  }
-
-  body.partner-page .partner-hero-overlay {
-    background:
-      linear-gradient(180deg, rgba(0,0,0,.65), rgba(0,0,0,.85) 45%, rgba(0,0,0,.98)) !important;
-  }
-
-  body.partner-page .partner-title {
-    font-size: clamp(3rem, 14vw, 4.8rem) !important;
-  }
+body.partner-page .partner-hero h2{
+  max-width:760px;
 }

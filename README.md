@@ -1,3 +1,3 @@
 # Under Pressure USA Website
 
-Homepage for Under Pressure USA.
+Static website for Under Pressure USA. Hosted on Cloudflare Pages.

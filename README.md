@@ -1,13 +1,8 @@
-# Under Pressure USA Website Update
+# Under Pressure USA Partner Page Clean Fix
 
-This package includes:
-- Partner page title/header blur fix
-- Updated media kit PDF:
-  assets/media/UnderPressureUSA_MediaKit_July2026.pdf
+This package contains only what changed:
+- partner.html
+- style.css
+- assets/media/UnderPressureUSA_MediaKit_July2026.pdf
 
-GitHub Desktop:
-1. Unzip this package.
-2. Copy everything inside into your local `underpressureusa-website` folder.
-3. Replace existing files.
-4. Commit summary: `Fix partner title and update media kit`
-5. Push origin.
+It removes the old overlapping spacer fixes and applies one clean Partner page hero layout.

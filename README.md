@@ -1,8 +1,17 @@
-# Under Pressure USA Partner Page Clean Fix
+# Under Pressure USA Homepage Update
 
-This package contains only what changed:
-- partner.html
+Adds a new homepage section:
+
+Listen & Watch
+- Watch on YouTube
+- Listen on Spotify
+
+Files included:
+- index.html
 - style.css
-- assets/media/UnderPressureUSA_MediaKit_July2026.pdf
 
-It removes the old overlapping spacer fixes and applies one clean Partner page hero layout.
+Using GitHub Desktop:
+1. Copy these files into your local underpressureusa-website folder.
+2. Replace existing files.
+3. Commit summary: Add Spotify and Listen Watch section
+4. Push origin.

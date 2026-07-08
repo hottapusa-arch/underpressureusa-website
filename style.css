@@ -46,23 +46,278 @@ h1,h2,h3,p{margin-top:0} h1{font-family:Anton,Impact,sans-serif;text-transform:u
 @media(max-width:1000px){.cards.four{grid-template-columns:repeat(2,1fr)}.industry-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.partner-hero-content{margin-left:20px;padding-right:20px;padding-top:125px;padding-bottom:50px}.partner-hero-bg{background-position:58% center}.partner-hero-overlay{background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.86) 46%,rgba(0,0,0,.98))}.cards.four,.manifesto-grid,.industry-grid,.media-card{grid-template-columns:1fr}.partner-photo-block img{height:380px}.manifesto blockquote{padding:24px}.partner-card{min-height:auto}}
 
-/* ===== Partner Hero V2 ===== */
-body.partner-page .partner-title{
-  font-family:Anton,Impact,sans-serif;
-  text-transform:uppercase;
-  line-height:.86;
-  margin:0 0 24px;
+
+/* ===== Partner page V2 fixed hero ===== */
+.partner-page .site-header {
+  z-index: 1000;
 }
-body.partner-page .partner-title .small-line{
-  display:block;
-  font-size:clamp(2rem,3vw,2.8rem);
-  letter-spacing:.08em;
-  margin-bottom:.45rem;
+
+.partner-page .partner-hero {
+  position: relative;
+  min-height: 92vh;
+  padding-top: clamp(175px, 18vh, 230px) !important;
+  overflow: hidden;
 }
-body.partner-page .partner-title span:not(.small-line){
-  display:block;
-  font-size:clamp(5rem,9vw,8rem);
+
+.partner-page .partner-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(2,6,10,.96) 0%, rgba(2,6,10,.82) 44%, rgba(2,6,10,.52) 72%, rgba(2,6,10,.88) 100%),
+    linear-gradient(180deg, rgba(2,6,10,.50) 0%, rgba(2,6,10,.20) 45%, rgba(2,6,10,.96) 100%),
+    url("assets/images/hero-valve-insert.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: none !important;
+  transform: scale(1.02);
+  z-index: 0;
 }
-body.partner-page .partner-hero h2{
-  max-width:760px;
+
+.partner-page .partner-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 45%, rgba(38,156,255,.18), transparent 36%);
+  z-index: 1;
 }
+
+.partner-page .partner-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.partner-page .partner-hero h1 {
+  font-size: clamp(3.4rem, 8vw, 8.4rem) !important;
+  line-height: .86 !important;
+  letter-spacing: -0.055em;
+  max-width: 1080px;
+  margin: 0 0 22px !important;
+}
+
+.partner-page .partner-hero h2 {
+  font-size: clamp(1.45rem, 2.5vw, 2.2rem);
+  margin-bottom: 24px;
+}
+
+.partner-page .partner-hero p:not(.eyebrow) {
+  max-width: 920px;
+  font-size: clamp(1.05rem, 1.45vw, 1.35rem);
+}
+
+.partner-page .media-card {
+  border: 1px solid rgba(255,255,255,.14);
+  background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
+  border-radius: 24px;
+  padding: clamp(28px, 4vw, 52px);
+  box-shadow: 0 22px 70px rgba(0,0,0,.38);
+}
+
+@media (max-width: 800px) {
+  .partner-page .partner-hero {
+    min-height: 84vh;
+    padding-top: 132px !important;
+  }
+
+  .partner-page .partner-hero h1 {
+    font-size: clamp(3rem, 16vw, 5.2rem) !important;
+  }
+}
+
+
+/* ===== Partner page V3 header clearance fix ===== */
+body.partner-page main {
+  padding-top: 0 !important;
+}
+
+body.partner-page .partner-hero {
+  padding-top: 260px !important;
+  min-height: 100vh !important;
+}
+
+
+
+body.partner-page .partner-hero h1 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+@media (max-width: 800px) {
+  body.partner-page .partner-hero {
+    padding-top: 210px !important;
+  }
+
+  
+}
+
+
+/* ===== Partner page V4: match homepage header/title spacing ===== */
+body.partner-page .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999 !important;
+}
+
+body.partner-page .partner-hero {
+  position: relative;
+  min-height: 100vh !important;
+  padding-top: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+body.partner-page .partner-hero-spacer {
+  display: block;
+  height: 118px;
+  flex: 0 0 118px;
+}
+
+body.partner-page .partner-hero-content {
+  position: relative;
+  z-index: 3;
+  padding-top: 130px !important;
+  padding-bottom: 80px;
+}
+
+body.partner-page .partner-hero .eyebrow {
+  margin-top: 0 !important;
+}
+
+body.partner-page .partner-hero h1 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.partner-page .partner-hero-bg {
+  z-index: 0;
+}
+
+body.partner-page .partner-hero-overlay {
+  z-index: 1;
+}
+
+@media (max-width: 800px) {
+  body.partner-page .partner-hero {
+    align-items: flex-start !important;
+  }
+
+  body.partner-page .partner-hero-spacer {
+    height: 92px;
+    flex-basis: 92px;
+  }
+
+  body.partner-page .partner-hero-content {
+    padding-top: 115px !important;
+  }
+}
+
+
+/* ===== FINAL FIX: Partner hero title below header blur ===== */
+body.partner-page .partner-hero {
+  position: relative !important;
+  min-height: 100vh !important;
+  padding-top: 0 !important;
+  display: block !important;
+  overflow: hidden !important;
+}
+
+body.partner-page .partner-title-clearance {
+  height: 210px !important;
+  display: block !important;
+}
+
+body.partner-page .partner-hero-content {
+  position: relative !important;
+  z-index: 5 !important;
+  max-width: 1160px !important;
+  margin: 0 auto !important;
+  padding: 42px 24px 90px !important;
+  transform: none !important;
+}
+
+body.partner-page .partner-hero h1 {
+  margin: 0 0 22px !important;
+  padding: 0 !important;
+  font-size: clamp(3.1rem, 7.2vw, 7.2rem) !important;
+  line-height: .88 !important;
+  letter-spacing: -0.055em !important;
+  max-width: 1120px !important;
+}
+
+body.partner-page .partner-hero-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  filter: none !important;
+}
+
+body.partner-page .partner-hero-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+}
+
+body.partner-page .site-header {
+  z-index: 9999 !important;
+}
+
+@media (max-width: 800px) {
+  body.partner-page .partner-title-clearance {
+    height: 150px !important;
+  }
+
+  body.partner-page .partner-hero-content {
+    padding-top: 28px !important;
+  }
+
+  body.partner-page .partner-hero h1 {
+    font-size: clamp(2.8rem, 14vw, 5rem) !important;
+  }
+}
+
+/* Listen & Watch section */
+.listen-watch {
+  background:
+    radial-gradient(circle at 80% 30%, rgba(21,151,255,.12), transparent 34%),
+    linear-gradient(180deg, #05080b, #080d12);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.listen-watch h2 {
+  font-size: clamp(2.2rem, 4.5vw, 4.7rem);
+  line-height: 1.02;
+  text-transform: uppercase;
+  letter-spacing: -.03em;
+  margin-bottom: 0;
+}
+
+.listen-card {
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
+  border-radius: 18px;
+  padding: clamp(24px, 4vw, 42px);
+  box-shadow: var(--shadow);
+}
+
+.listen-card p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.listen-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+@media(max-width:700px) {
+  .listen-actions .btn {
+    width: 100%;
+  }
+}
+

@@ -278,3 +278,58 @@ body.partner-page .partner-hero p {
   }
 }
 
+/* ----- It’s John Hamling additions ----- */
+.john-series {
+  background:
+    radial-gradient(circle at 18% 25%, rgba(21,151,255,.10), transparent 32%),
+    linear-gradient(180deg, var(--panel), #070b10);
+}
+
+.john-series .section-head strong,
+.john-series-card strong {
+  color: var(--text);
+}
+
+.john-series-card {
+  min-height: 245px;
+}
+
+.john-series-actions {
+  margin-top: 28px;
+}
+
+.lifestyle-partner-grid {
+  align-items: start;
+}
+
+.lifestyle-partner-copy {
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(21,151,255,.10), rgba(255,255,255,.03));
+}
+
+.lifestyle-partner-copy h3 {
+  font-size: clamp(1.65rem, 3vw, 2.5rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.lifestyle-partner-copy p {
+  color: var(--muted);
+}
+
+.lifestyle-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 700px) {
+  .john-series-actions .btn {
+    width: 100%;
+  }
+
+  .lifestyle-grid {
+    grid-template-columns: 1fr;
+  }
+}

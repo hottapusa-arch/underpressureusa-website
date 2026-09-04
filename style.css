@@ -333,3 +333,105 @@ body.partner-page .partner-hero p {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================================
+   UNDER PRESSURE USA — WEBSITE v2.0 ADDITIONS
+   Added after v1.0 stability layer so existing fixes remain intact.
+   ========================================================= */
+
+.training-panel {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(21,151,255,.11), transparent 30%),
+    linear-gradient(180deg, #05080b, #0a1016);
+  border-bottom: 1px solid var(--line);
+}
+
+.video-kicker {
+  color: var(--blue) !important;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .78rem !important;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.content-pillars .card {
+  min-height: 270px;
+}
+
+.gear {
+  background:
+    radial-gradient(circle at 20% 25%, rgba(21,151,255,.08), transparent 30%),
+    #05080b;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.gear-grid {
+  display: grid;
+  grid-template-columns: 1fr .85fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.gear h2 {
+  font-size: clamp(2.2rem, 4.5vw, 4.7rem);
+  line-height: 1.02;
+  text-transform: uppercase;
+  letter-spacing: -.03em;
+  margin-bottom: 18px;
+}
+
+.gear p {
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.gear-card {
+  padding: clamp(28px, 4vw, 42px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(21,151,255,.12), rgba(255,255,255,.035));
+  box-shadow: var(--shadow);
+}
+
+.gear-card span {
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .78rem;
+  font-weight: 900;
+}
+
+.gear-card h3 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1.04;
+  text-transform: uppercase;
+  margin: 14px 0 14px;
+}
+
+.affiliate-note {
+  font-size: .82rem !important;
+  opacity: .78;
+  margin-top: 22px;
+}
+
+@media (max-width: 1080px) {
+  nav { gap: 18px; font-size: 11px; }
+}
+
+@media (max-width: 900px) {
+  nav .nav-optional { display: none; }
+  .gear-grid { grid-template-columns: 1fr; }
+  .content-pillars { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+@media (max-width: 700px) {
+  .content-pillars { grid-template-columns: 1fr !important; }
+  .gear-card .btn { width: 100%; }
+}
+
+@media (max-width: 560px) {
+  nav a:nth-child(2),
+  nav a:nth-child(3) { display: none; }
+}

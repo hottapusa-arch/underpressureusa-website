@@ -355,6 +355,47 @@ body.partner-page .partner-hero p {
   border-bottom: 1px solid var(--line);
 }
 
+.guide-series-head { max-width: 860px; }
+.guide-series-head h2 { max-width: 820px; }
+.guide-series-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 3vw, 34px);
+  margin-top: 38px;
+}
+.guide-series-card {
+  display: grid;
+  grid-template-columns: minmax(120px, .72fr) minmax(0, 1fr);
+  gap: clamp(18px, 2.5vw, 32px);
+  align-items: center;
+  padding: clamp(18px, 2.6vw, 30px);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 14px;
+  background: rgba(255,255,255,.045);
+}
+.guide-series-card img { display: block; width: 100%; height: auto; box-shadow: 0 16px 32px rgba(0,0,0,.36); }
+.guide-series-card .eyebrow { margin-bottom: 12px; }
+.guide-series-card h3 { margin: 0 0 14px; font-size: clamp(1.55rem, 2.4vw, 2.3rem); line-height: 1.08; text-transform: uppercase; }
+.guide-series-card p:last-child { color: var(--muted); line-height: 1.55; }
+.guide-store-link { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-top: 30px; padding: 26px 30px; border-left: 4px solid var(--blue); background: rgba(21,151,255,.11); }
+.guide-store-link p { max-width: 620px; margin: 0; color: #eef4fa; font-weight: 700; }
+.guide-store-link .btn { flex: 0 0 auto; text-align: center; }
+
+@media (max-width: 1000px) {
+  .guide-series-card { grid-template-columns: 1fr; align-items: start; }
+  .guide-series-card img { max-width: 260px; }
+}
+@media (max-width: 700px) {
+  .guide-series-grid { grid-template-columns: 1fr; }
+  .guide-series-card { grid-template-columns: minmax(100px, .48fr) minmax(0, 1fr); }
+  .guide-store-link { display: block; padding: 24px; }
+  .guide-store-link .btn { display: block; margin-top: 20px; }
+}
+@media (max-width: 480px) {
+  .guide-series-card { grid-template-columns: 1fr; }
+  .guide-series-card img { max-width: 230px; }
+}
+
 .field-guide-grid {
   display: grid;
   grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr);

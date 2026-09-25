@@ -1,6 +1,6 @@
 # Under Pressure USA field guide section update
 
-This package updates the existing website at underpressureusa.us. It presents Water Pressure Fundamentals and Pipe & Fitting Fundamentals as the first two volumes of The Why Behind the Work field guide series. The store button opens https://underpressureusa.lemonsqueezy.com/ so future guides can be added to the store without changing the button.
+This package updates the existing website at underpressureusa.us. It presents compact, side-by-side covers for Water Pressure Fundamentals and Pipe & Fitting Fundamentals as the first two volumes of The Why Behind the Work field guide series. Shared guide copy appears beneath the covers, followed by a store button that opens https://underpressureusa.lemonsqueezy.com/ so future guides can be added to the store without changing the button.
 
 ## Install in the existing website repository
 

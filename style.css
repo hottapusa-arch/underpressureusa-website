@@ -367,19 +367,21 @@ body.partner-page .partner-hero p {
 .guide-series-card {
   min-width: 0;
 }
-.guide-series-card img { display: block; width: 100%; max-width: 220px; height: auto; margin-bottom: 18px; box-shadow: 0 12px 24px rgba(0,0,0,.34); }
+.guide-series-card img { display: block; width: auto; height: clamp(180px, 28vw, 285px); max-width: 100%; object-fit: contain; object-position: left top; margin-bottom: 18px; box-shadow: 0 12px 24px rgba(0,0,0,.34); }
 .guide-series-card .eyebrow { margin-bottom: 8px; }
 .guide-series-card h3 { margin: 0; font-size: clamp(1.2rem, 1.7vw, 1.55rem); line-height: 1.18; text-transform: uppercase; }
 .guide-series-description { max-width: 820px; margin-top: 38px; }
 .guide-series-description p { margin-bottom: 24px; color: var(--muted); line-height: 1.65; }
 .guide-series-description strong { color: #eef4fa; }
+.guide-series-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 
 @media (max-width: 560px) {
   .guide-series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
   .guide-series-card img { max-width: 100%; }
   .guide-series-card h3 { font-size: 1.05rem; }
   .guide-series-description { margin-top: 30px; }
-  .guide-series-description .btn { display: block; text-align: center; }
+  .guide-series-actions { display: grid; grid-template-columns: 1fr; }
+  .guide-series-description .btn { display: flex; text-align: center; }
 }
 
 .field-guide-grid {

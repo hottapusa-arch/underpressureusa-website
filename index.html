@@ -9,6 +9,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Field Guide Series: four covers on desktop, responsive on smaller screens. */
+    #field-guide .guide-series-grid-four {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(14px, 2vw, 28px);
+      align-items: start;
+    }
+    #field-guide .guide-series-grid-four .guide-series-card { min-width: 0; }
+    #field-guide .guide-series-grid-four .guide-series-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    #field-guide .guide-card-description {
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+    @media (max-width: 800px) {
+      #field-guide .guide-series-grid-four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 420px) {
+      #field-guide .guide-series-grid-four { gap: 14px; }
+    }
+  </style>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQNLJW3FHK"></script>
   <script>
@@ -112,21 +139,31 @@
           <p class="eyebrow blue">The Why Behind the Work · Field Guide Series</p>
           <h2>Practical field guides for the work beneath our feet.</h2>
         </div>
-        <div class="guide-series-grid">
+        <div class="guide-series-grid guide-series-grid-four">
           <article class="guide-series-card">
-            <img src="assets/images/water-pressure-fundamentals-cover.png" alt="Water Pressure Fundamentals cover" loading="lazy" />
+            <img src="assets/images/water-pressure-fundamentals-cover.png" alt="Volume 1 — Water Pressure Fundamentals cover" loading="lazy" />
             <p class="eyebrow blue">Volume 1</p>
-            <h3>Water Pressure Fundamentals</h3>
+            <p class="guide-card-description">Understand pressure, elevation, and flow.</p>
           </article>
           <article class="guide-series-card">
-            <img src="assets/images/pipe-and-fitting-fundamentals-cover.jpg" alt="Pipe &amp; Fitting Fundamentals cover" loading="lazy" />
+            <img src="assets/images/pipe-and-fitting-fundamentals-cover.jpg" alt="Volume 2 — Pipe &amp; Fitting Fundamentals cover" loading="lazy" />
             <p class="eyebrow blue">Volume 2</p>
-            <h3>Pipe &amp; Fitting Fundamentals</h3>
+            <p class="guide-card-description">Understand pipe dimensions, fit, and support.</p>
+          </article>
+          <article class="guide-series-card">
+            <img src="assets/images/valves-and-system-isolation-fundamentals-cover.jpg" alt="Volume 3 — Valves &amp; System Isolation Fundamentals cover" loading="lazy" />
+            <p class="eyebrow blue">Volume 3</p>
+            <p class="guide-card-description">Understand valves, isolation, and continuing flow.</p>
+          </article>
+          <article class="guide-series-card">
+            <img src="assets/images/air-and-water-hammer-fundamentals-cover.jpg" alt="Volume 4 — Air &amp; Water Hammer Fundamentals cover" loading="lazy" />
+            <p class="eyebrow blue">Volume 4</p>
+            <p class="guide-card-description">Understand trapped air, pressure changes, and water hammer.</p>
           </article>
         </div>
         <div class="guide-series-description">
-          <p>The Why Behind the Work series explains why water and sewer systems behave the way they do. Plain language, actual field photos, and realistic diagrams connect what crews see with why it matters.</p>
-          <p>Explore individual guides and digital bundles, or browse paperback editions on Amazon. More topics are on the way.</p>
+          <p>Four practical field guides built around the work crews do every day. From pressure and pipe dimensions to valve isolation and water hammer, each volume explains the why behind what happens in the field.</p>
+          <p>Available individually in digital and paperback editions, or get all four digital guides together in one bundle.</p>
           <div class="guide-series-actions">
             <a class="btn primary" href="https://underpressureusa.lemonsqueezy.com/" target="_blank" rel="noopener noreferrer">Shop Digital Guides</a>
             <a class="btn secondary" href="https://www.amazon.com/dp/B0HL1VRYPG?binding=paperback&amp;qid=1790704485&amp;sr=8-1&amp;ref=dbs_dp_rwt_sb_pc_tpbk" target="_blank" rel="noopener noreferrer">Browse Paperbacks</a>

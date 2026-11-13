@@ -1,0 +1,12 @@
+UPUSA Knowledge Center integration overlay — 2026-11-13
+
+Includes 96 article pages, 9 Knowledge Center navigation pages, plus uploaded index.html, partner.html, shop.html and style.css.
+Added Learn navigation links and a homepage Knowledge Center feature.
+
+IMPORTANT: This is an overlay for the EXISTING GitHub repository, not a standalone website. Existing assets/ directory, media, scripts, and other site files were not supplied and must remain in the repository. Do not delete them.
+
+Unresolved relative paths (may exist in your existing repository):
+/cdn-cgi/l/email-protection: referenced by 1 page(s)
+assets/media/UnderPressureUSA_MediaKit_July2026.pdf: referenced by 1 page(s)
+
+Technical editorial signoff on every article has NOT been independently verified. Review before production.

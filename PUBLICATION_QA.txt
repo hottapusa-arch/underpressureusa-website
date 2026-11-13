@@ -1,0 +1,7 @@
+HTML pages: 109
+Local references missing: 0
+Missing reference details: []
+Missing anchor targets: 0
+Missing title or meta description: 0
+Pages: []
+Review external links and live mobile layout before deployment.

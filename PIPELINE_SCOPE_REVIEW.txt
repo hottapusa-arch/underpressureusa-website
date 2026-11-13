@@ -1,0 +1,7 @@
+UPUSA broader pipeline revision — 2026-11-13
+
+Expanded: concrete-and-pccp-pipe.html, pvc-pipe.html, excavation-damage-to-utilities.html, hdpe-pipe.html, ductile-iron-pipe.html, steel-water-pipe.html, gravity-sewers.html, sewer-force-mains.html, water-distribution-networks.html
+
+Coverage principle: distinguish potable water, wastewater gravity, sewer force mains, stormwater, reclaimed water, and other fluids when relevant. Do not suggest a material is suitable for all fluids.
+
+Remaining work: editorial and standards verification across every page; check current standards and local codes before publication. This is a review build, not certified engineering guidance.

@@ -1,0 +1,14 @@
+Under Pressure USA Knowledge Center integration audit
+
+HTML pages: 108
+Asset files: 23
+Missing local references: 2
+
+/cdn-cgi/l/email-protection#fd97929593bd889399988f8d8f988e8e888f98888e9cd3888e (1 references)
+/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js (1 references)
+
+Missing reference details:
+('index.html', 'a', '/cdn-cgi/l/email-protection#fd97929593bd889399988f8d8f988e8e888f98888e9cd3888e')
+('index.html', 'script', '/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')
+
+NOTE: External URLs and factual/editorial accuracy were not independently verified. This is a technical integration build, not an editorial certification.

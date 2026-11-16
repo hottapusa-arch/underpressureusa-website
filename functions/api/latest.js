@@ -4,15 +4,6 @@ const PLAYLISTS = {
   why: 'PLCq0-UCOI_bk',
 };
 
-function decodeXml(value = '') {
-  return value
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'");
-}
-
 export async function onRequestGet(context) {
   const url = new URL(context.request.url);
   const series = url.searchParams.get('series');
@@ -26,48 +17,69 @@ export async function onRequestGet(context) {
   }
 
   try {
-    const feedUrl =
-      `https://www.youtube.com/feeds/videos.xml?playlist_id=${encodeURIComponent(playlistId)}`;
+    const apiKey = context.env.YOUTUBE_API_KEY;
 
-    const response = await fetch(feedUrl);
-
-    if (!response.ok) {
-      throw new Error(`YouTube feed returned ${response.status}`);
+    if (!apiKey) {
+      throw new Error('YouTube API key not configured');
     }
 
-    const xml = await response.text();
+    let pageToken = '';
+    let latest = null;
+    let pagesChecked = 0;
 
-    const entries = [...xml.matchAll(
-      /<entry>([\s\S]*?)<\/entry>/gi
-    )];
+    do {
+      const apiUrl = new URL(
+        'https://www.googleapis.com/youtube/v3/playlistItems'
+      );
 
-    const videos = entries.map(match => {
-      const entry = match[1];
+      apiUrl.searchParams.set('part', 'snippet');
+      apiUrl.searchParams.set('playlistId', playlistId);
+      apiUrl.searchParams.set('maxResults', '50');
+      apiUrl.searchParams.set('key', apiKey);
 
-      return {
-        videoId: entry.match(
-          /<yt:videoId>([^<]+)<\/yt:videoId>/i
-        )?.[1],
-        title: decodeXml(
-          entry.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || ''
-        ),
-        published: entry.match(
-          /<published>([^<]+)<\/published>/i
-        )?.[1] || null,
-      };
-    }).filter(video => video.videoId && video.published);
+      if (pageToken) {
+        apiUrl.searchParams.set('pageToken', pageToken);
+      }
 
-    if (!videos.length) {
-      throw new Error('No videos found in playlist feed');
+      const response = await fetch(apiUrl.toString());
+
+      if (!response.ok) {
+        throw new Error(
+          `YouTube API returned ${response.status}`
+        );
+      }
+
+      const data = await response.json();
+
+      for (const item of data.items || []) {
+        const snippet = item.snippet || {};
+        const videoId = snippet.resourceId?.videoId;
+        const addedAt = snippet.publishedAt;
+
+        if (!videoId || !addedAt) continue;
+        if (snippet.title === 'Deleted video') continue;
+        if (snippet.title === 'Private video') continue;
+
+        if (
+          !latest ||
+          Date.parse(addedAt) > Date.parse(latest.addedAt)
+        ) {
+          latest = {
+            videoId,
+            title: snippet.title,
+            addedAt,
+            published: snippet.videoPublishedAt || null,
+          };
+        }
+      }
+
+      pageToken = data.nextPageToken || '';
+      pagesChecked++;
+    } while (pageToken && pagesChecked < 20);
+
+    if (!latest) {
+      throw new Error('No accessible videos found');
     }
-
-    videos.sort(
-      (a, b) =>
-        new Date(b.published).getTime() -
-        new Date(a.published).getTime()
-    );
-
-    const latest = videos[0];
 
     return Response.json(
       {
@@ -77,18 +89,23 @@ export async function onRequestGet(context) {
       },
       {
         headers: {
-          'Cache-Control': 'public, max-age=300, s-maxage=900',
+          'Cache-Control':
+            'public, max-age=300, s-maxage=900',
         },
       }
     );
-
   } catch (error) {
     return Response.json(
       {
         error: 'Latest video unavailable',
         detail: error.message,
       },
-      { status: 502 }
+      {
+        status: 502,
+        headers: {
+          'Cache-Control': 'no-store',
+        },
+      }
     );
   }
 }

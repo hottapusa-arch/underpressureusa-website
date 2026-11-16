@@ -1,3 +1,4 @@
+
 const PLAYLISTS = {
   underground: 'PL5j6gGdMnrLs-dy5sS7Sgp4zOMpq3X8HW',
   why: 'PLCq0-UCOI_bk',
@@ -20,43 +21,59 @@ export async function onRequestGet(context) {
   if (!playlistId) {
     return Response.json(
       { error: 'Unknown series' },
-      { status: 400, headers: { 'Cache-Control': 'public, max-age=300' } }
+      { status: 400 }
     );
   }
 
   try {
-    const feedUrl = `https://www.youtube.com/feeds/videos.xml?playlist_id=${encodeURIComponent(playlistId)}`;
-    const response = await fetch(feedUrl, {
-      headers: { 'User-Agent': 'UnderPressureUSA/2.0' },
-    });
+    const feedUrl =
+      `https://www.youtube.com/feeds/videos.xml?playlist_id=${encodeURIComponent(playlistId)}`;
+
+    const response = await fetch(feedUrl);
 
     if (!response.ok) {
       throw new Error(`YouTube feed returned ${response.status}`);
     }
 
     const xml = await response.text();
-    const entryMatch = xml.match(/<entry>([\s\S]*?)<\/entry>/i);
 
-    if (!entryMatch) {
+    const entries = [...xml.matchAll(
+      /<entry>([\s\S]*?)<\/entry>/gi
+    )];
+
+    const videos = entries.map(match => {
+      const entry = match[1];
+
+      return {
+        videoId: entry.match(
+          /<yt:videoId>([^<]+)<\/yt:videoId>/i
+        )?.[1],
+        title: decodeXml(
+          entry.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || ''
+        ),
+        published: entry.match(
+          /<published>([^<]+)<\/published>/i
+        )?.[1] || null,
+      };
+    }).filter(video => video.videoId && video.published);
+
+    if (!videos.length) {
       throw new Error('No videos found in playlist feed');
     }
 
-    const entry = entryMatch[1];
-    const videoId = entry.match(/<yt:videoId>([^<]+)<\/yt:videoId>/i)?.[1];
-    const title = entry.match(/<title>([\s\S]*?)<\/title>/i)?.[1];
-    const published = entry.match(/<published>([^<]+)<\/published>/i)?.[1];
+    videos.sort(
+      (a, b) =>
+        new Date(b.published).getTime() -
+        new Date(a.published).getTime()
+    );
 
-    if (!videoId) {
-      throw new Error('Video ID missing from playlist feed');
-    }
+    const latest = videos[0];
 
     return Response.json(
       {
         series,
         playlistId,
-        videoId,
-        title: decodeXml(title || ''),
-        published: published || null,
+        ...latest,
       },
       {
         headers: {
@@ -64,10 +81,14 @@ export async function onRequestGet(context) {
         },
       }
     );
+
   } catch (error) {
     return Response.json(
-      { error: 'Latest video unavailable', detail: error.message },
-      { status: 502, headers: { 'Cache-Control': 'public, max-age=60' } }
+      {
+        error: 'Latest video unavailable',
+        detail: error.message,
+      },
+      { status: 502 }
     );
   }
 }

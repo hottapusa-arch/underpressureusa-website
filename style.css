@@ -615,3 +615,44 @@ body.partner-page .partner-hero p {
 .kids-feature,.kids-page{background:#eef8ff;color:#10233b}
 .kids-feature{border-block:5px solid #ffd52e}.kids-split{display:grid;grid-template-columns:1fr 1.15fr;gap:36px;align-items:center}.kids-split img,.kids-topic img{width:100%;height:auto;border-radius:14px}.kids-kicker{color:#9a4200;font-weight:900;text-transform:uppercase;letter-spacing:.12em}.kids-feature h2,.kids-page h2{font-size:clamp(1.8rem,4vw,3.4rem);line-height:1.08}.kids-button{display:inline-flex;background:#ffd52e;color:#10233b;padding:14px 22px;border-radius:8px;font-weight:900;text-align:center}.kids-button:hover{background:#ffbd25}.kids-page .site-header{background:#10233b}.kids-page .site-header nav{gap:14px;flex-wrap:wrap;justify-content:flex-end}.kids-hero{padding:160px 0 64px;background:linear-gradient(135deg,#d9f2ff,#fff5cf)}.kids-page h1{font-size:clamp(2.8rem,6vw,5.5rem);line-height:1;color:#10233b;text-shadow:none}.kids-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.kids-topic{background:white;border:1px solid #c4dbea;border-radius:16px;padding:18px}.kids-topic h3{margin:16px 0 8px;font-size:1.35rem}.kids-page .site-footer{color:#fff}.kids-books{background:#fff4cf}.kids-page .kids-topic a{color:#005caa;text-decoration:underline;font-weight:700}.kids-page .kids-article{max-width:850px;margin:auto;padding:155px 20px 60px}.kids-article h1{font-size:clamp(2.3rem,5vw,4rem)}.kids-article img{border-radius:12px;margin:24px 0}.kids-article h2{font-size:1.6rem;margin-top:30px}.kids-article p{font-size:1.12rem;line-height:1.7}
 @media(max-width:760px){.kids-split,.kids-grid{grid-template-columns:1fr}.kids-hero{padding-top:135px}.home-page .site-header nav{flex-wrap:wrap;justify-content:flex-end;overflow:visible;gap:8px}.home-page .site-header nav a{font-size:10px}.home-page .site-header nav .kids-nav{padding:7px 10px}.kids-page .site-header nav a{display:inline-flex!important}.kids-page .site-header nav{overflow:visible}}
+
+
+/* ===== CHRISTMAS 2026 — START (remove this block after the holidays) ===== */
+.site-header .brand { position: relative; }
+.site-header .brand::after {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 32px;
+  top: -7px;
+  right: -3px;
+  transform: rotate(15deg);
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%2076%22%3E%3Cpath%20d%3D%22M12%2051Q19%209%2048%209Q76%208%2088%2044L72%2039Q61%2024%2053%2035L53%2052Z%22%20fill%3D%22%23d82232%22%20stroke%3D%22%23a61020%22%20stroke-width%3D%222%22%2F%3E%3Cpath%20d%3D%22M13%2048Q33%2041%2057%2047Q64%2050%2062%2059Q60%2066%2051%2065L15%2063Q6%2062%207%2055Q7%2050%2013%2048Z%22%20fill%3D%22%23fff%22%20stroke%3D%22%23dce7ee%22%20stroke-width%3D%222%22%2F%3E%3Ccircle%20cx%3D%2287%22%20cy%3D%2245%22%20r%3D%2210%22%20fill%3D%22%23fff%22%20stroke%3D%22%23dce7ee%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E") center / contain no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+.btn, .kids-button, .site-header nav .kids-nav, .site-header nav .shop-nav,
+.card, .field-card, .video-card, .buy-card, .gear-card, .listen-card,
+.shop-product, .kids-topic, .upk-book, .media-card {
+  position: relative;
+}
+.btn::after, .kids-button::after, .site-header nav .kids-nav::after,
+.site-header nav .shop-nav::after, .card::after, .field-card::after,
+.video-card::after, .buy-card::after, .gear-card::after, .listen-card::after,
+.shop-product::after, .kids-topic::after, .upk-book::after, .media-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5px;
+  right: 5px;
+  height: 5px;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%2010%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%200H120V4Q114%207%20108%204T96%205T84%204T72%206T60%204T48%205T36%204T24%206T12%204T0%205Z%22%20fill%3D%22%23f5fbff%22%2F%3E%3Cpath%20d%3D%22M0%205Q6%203%2012%204T24%206T36%204T48%205T60%204T72%206T84%204T96%205T108%204T120%204%22%20fill%3D%22none%22%20stroke%3D%22%23c7e2f4%22%20stroke-width%3D%22.7%22%2F%3E%3C%2Fsvg%3E") left top / 120px 7px repeat-x;
+  border-radius: 3px 3px 0 0;
+  pointer-events: none;
+  opacity: .92;
+}
+.site-header nav .kids-nav::after, .site-header nav .shop-nav::after { height: 3px; }
+@media (max-width: 760px) {
+  .site-header .brand::after { width: 30px; height: 23px; top: -5px; right: -2px; }
+}
+/* ===== CHRISTMAS 2026 — END ===== */

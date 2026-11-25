@@ -645,13 +645,13 @@ body.partner-page .partner-hero p {
   top: 0;
   left: 5px;
   right: 5px;
-  height: 5px;
-  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%2010%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%200H120V4Q114%207%20108%204T96%205T84%204T72%206T60%204T48%205T36%204T24%206T12%204T0%205Z%22%20fill%3D%22%23f5fbff%22%2F%3E%3Cpath%20d%3D%22M0%205Q6%203%2012%204T24%206T36%204T48%205T60%204T72%206T84%204T96%205T108%204T120%204%22%20fill%3D%22none%22%20stroke%3D%22%23c7e2f4%22%20stroke-width%3D%22.7%22%2F%3E%3C%2Fsvg%3E") left top / 120px 7px repeat-x;
+  height: 8px;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20240%2012%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22s%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23ffffff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23e5f1fa%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M0%203%20Q8%200%2019%202%20Q32%204%2043%201%20Q55%20-1%2069%202%20Q82%204%2094%202%20Q108%200%20121%202%20Q135%204%20149%201%20Q165%200%20178%203%20Q190%204%20204%201%20Q219%200%20230%203%20Q236%204%20240%203%20L240%206%20Q231%207%20225%206%20Q216%205%20210%208%20Q203%2011%20195%208%20Q184%205%20174%207%20Q163%209%20155%206%20Q146%205%20137%208%20Q128%2012%20119%208%20Q110%205%20101%206%20Q90%209%2080%207%20Q68%204%2059%207%20Q50%2010%2042%207%20Q32%205%2023%206%20Q11%209%200%206%20Z%22%20fill%3D%22url%28%23s%29%22%2F%3E%3C%2Fsvg%3E") left top / 240px 8px repeat-x;
   border-radius: 3px 3px 0 0;
   pointer-events: none;
-  opacity: .92;
+  opacity: 1;
 }
-.site-header nav .kids-nav::after, .site-header nav .shop-nav::after { height: 3px; }
+.site-header nav .kids-nav::after, .site-header nav .shop-nav::after { height: 5px; background-size: 160px 5px; }
 @media (max-width: 760px) {
   .site-header .brand::after { width: 30px; height: 23px; top: -5px; right: -2px; }
 }

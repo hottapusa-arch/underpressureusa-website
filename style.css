@@ -656,3 +656,18 @@ body.partner-page .partner-hero p {
   .site-header .brand::after { width: 30px; height: 23px; top: -5px; right: -2px; }
 }
 /* ===== CHRISTMAS 2026 — END ===== */
+
+/* Keep long display headings and the photo frame within narrow viewports. */
+@media (max-width: 760px) {
+  .hero h1,
+  .partner-hero h1 { overflow-wrap: anywhere; }
+  .learn-hero h1,
+  .topic-hero h1,
+  .vf-hero h1 {
+    overflow-wrap: anywhere;
+    font-size: clamp(2.15rem, 10vw, 3rem);
+  }
+}
+@media (max-width: 560px) {
+  .about-image::before { right: -10px; }
+}
